@@ -1,0 +1,22 @@
+﻿<Window x:Class="GTA_V_Speech_Names_Extractor.ResultsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GTA_V_Speech_Names_Extractor"
+        mc:Ignorable="d"
+        Title="Results" Height="652.689" Width="800">
+    <Grid>
+        <ListView Name="ResultsList" Margin="10,10,10,64">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Voice" DisplayMemberBinding="{Binding VoiceName}" Width="265"/>
+                    <GridViewColumn Header="Speech" DisplayMemberBinding="{Binding SpeechName}" Width="265"/>
+                    <GridViewColumn Header="Index" DisplayMemberBinding="{Binding Index}" Width="265"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Name="GenerateCodeButton" Content="Generate Code" ToolTip="Generates C# code with a Speech struct and the found speechs as static properties inside classes specified by the voice name." Margin="10,0,10,35" FontWeight="Bold" Height="24" VerticalAlignment="Bottom"/>
+        <Button Name="GenerateListButton" Content="Generate List" ToolTip="Generates a text file with the speeches list, each line formatted as 'VOICE_NAME = SPEECH_NAME, INDEX'." Margin="10,0,10,6" FontWeight="Bold" Height="24" VerticalAlignment="Bottom"/>
+    </Grid>
+</Window>
